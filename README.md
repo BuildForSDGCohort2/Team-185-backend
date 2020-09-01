@@ -1,7 +1,7 @@
 # Team-185-backend Project
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e2aad7e894454a6a9b463a3af130cb52)](https://app.codacy.com/gh/BuildForSDGCohort2/Team-185-backend?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDGCohort2/Team-185-backend&utm_campaign=Badge_Grade_Settings)
 
-This is the front-end REPO for Team-185-Group-A. 
+This is the back-end REPO for Team-185-Group-A. 
 
 ## Authors 
 - **[Prince Musole](https://github.com/pmusole2)**

@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  res.json({ message: 'Your request was successful!' });
+  res.json({ message: 'Team-185 API is READY for Calls' });
   next();
 });
 

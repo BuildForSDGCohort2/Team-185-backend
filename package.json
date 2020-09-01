@@ -1,0 +1,28 @@
+{
+  "name": "team-185-backend",
+  "version": "1.0.0",
+  "description": "[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e2aad7e894454a6a9b463a3af130cb52)](https://app.codacy.com/gh/BuildForSDGCohort2/Team-185-backend?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDGCohort2/Team-185-backend&utm_campaign=Badge_Grade_Settings)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BuildForSDGCohort2/Team-185-backend.git"
+  },
+  "author": "Fred Nyakagwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BuildForSDGCohort2/Team-185-backend/issues"
+  },
+  "homepage": "https://github.com/BuildForSDGCohort2/Team-185-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "12.18.3"
+  }
+}

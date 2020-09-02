@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const MONGO_USERNAME = 'team_185';
-const MONGO_PASSWORD = 'backend';
-const MONGO_HOSTNAME = '127.0.0.1';
-const MONGO_PORT = '27017';
+const MONGO_PASSWORD = 'backend185';
+const MONGO_HOSTNAME = 'ds135726.mlab.com';
+const MONGO_PORT = '35726';
 const MONGO_DB = 'budger';
 
 const url = `mongodb://${MONGO_USERNAME}:

@@ -3,8 +3,9 @@ const app = express();
 const users = require('./routes/users');
 const items = require('./routes/items')
 const mongoose = require('mongoose');
-const connectDB = require('./db')
-const bodyParser = require('body-parser')
+const connectDB = require('./db');
+const bodyParser = require('body-parser');
+
 
 //Body parser middleware
 app.use(bodyParser.json());

@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 const ItemSchema = new Schema ({
     description: {type: String, required: true},
     amount: {type: Number, required: true}
-})
+});
+
 
 //Auto-generate timestamps
 ItemSchema.set('timestamps', true);

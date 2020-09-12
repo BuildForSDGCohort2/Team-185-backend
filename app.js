@@ -1,40 +1,26 @@
 const express = require('express');
 const app = express();
 const users = require('./routes/users');
+const items = require('./routes/items')
+const mongoose = require('mongoose');
+const connectDB = require('./db')
+const bodyParser = require('body-parser')
 
+//Body parser middleware
+app.use(bodyParser.json());
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-    next();
-});
+//DB Connect
+connectDB();
 
 app.use(express.urlencoded({ extended: true }));
+//Dynamic Routes
 app.use('/users', users);
+app.use ('/items', items);
 
-
-
-
-
-
-app.use((req, res, next) => {
-  console.log('Request received!');
-  next();
+//Static routes
+app.get("/", function(req, res) {
+  res.sendFile(__dirname + "/public/index.html");
 });
 
-app.use((req, res, next) => {
-  res.status(201);
-  next();
-});
-
-app.use((req, res, next) => {
-  res.json({ message: 'Team-185 API is READY for Calls' });
-  next();
-});
-
-app.use((req, res, next) => {
-  console.log('Response sent successfully!');
-});
 
 module.exports = app;

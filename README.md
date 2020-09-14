@@ -6,9 +6,10 @@ This is the back-end REPO for Team-185-Group-A.
 ## Authors 
 - **[Prince Musole](https://github.com/pmusole2)**
 - **[Fred Nyakagwa](https://github.com/nyakagwafred)**
-- **[Joseph](https://github.com/mwaoh)**
+- **[Joseph Mwaura](https://github.com/mwaoh)**
 - **[Felix Mutua](https://github.com/felixmutua)**
 - **[Bryson Nyamwange](https://github.com/brysonwaisi)**
+- **[Philisters Oside](https://github.com/felly91 )**
 
 ## Contributing
 
@@ -22,3 +23,5 @@ This project is licensed under the MIT License
 -   Andela Learning Community
 -   Facebook
 -   Open Classrooms
+-   FreeCodecamp
+-   W3Schools

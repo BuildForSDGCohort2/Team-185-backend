@@ -20,7 +20,8 @@
     "concurrently": "^5.3.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.1",
-    "mongoose": "^5.10.2"
+    "mongoose": "^5.10.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/BuildForSDGCohort2/Team-185-backend#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "express": "^4.17.1",
     "mongodb": "^3.6.1",
     "mongoose": "^5.10.2",

@@ -1,25 +1,26 @@
 const express = require('express');
 const router = express.Router();
-const Item = require('../models/item');
-const item = require('../models/item');
+const IncomeItem = require('../../models/IncomeItemModel');
+
 
 
 router.get('/', (req, res) => {
-    Item.find()
-        .then (items => res.json(items));
+    IncomeItem.find()
+        .sort({ date: -1})
+        .then (income_item => res.json(income_item));
 });
 
 
 router.post('/', (req, res) => {
-    const newItem = new Item({
+    const income_item = new IncomeItem({
         description: req.body.description,
         amount: req.body.amount   
     });
-    newItem.save().then(item => res.json(item));
+    income_item.save().then(income_item => res.json(income_item));
 });
 
 router.delete('/:id', (req, res) => {
-    Item.findById(req.params.id)
+    IncomeItem.findById(req.params.id)
         .then(item =>item.remove()
         .then(() => res.json({success: true})))
         .catch(err => res.status(404)
@@ -27,19 +28,18 @@ router.delete('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res, next) => {
-    const newItem = new Item({
+    const newIncomeItem = new IncomeItem({
       _id: req.params.id,
       description: req.body.description,
       amount: req.body.amount,
     });
 
-    Item.updateOne({_id: req.params.id}, newItem)
+    IncomeItem.updateOne({_id: req.params.id}, newIncomeItem)
         .then(() => {res.status(201).json({message: 'Updated!' });})
         .catch((error) => {res.status(400).json({error: error});
       }
     );
   });
-
 
 
 module.exports = router;

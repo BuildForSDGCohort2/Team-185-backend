@@ -39,29 +39,73 @@
                 <td>Project Details Markup File</td>
               </tr>
               <tr>
-                <th scope="row">GET</th>
-                <td>/items</td>
+                <th scope="row">DELETE</th>
+                <td>/expense_items/:id</td>
                 <td>No controller</td>
-                <td>Return all items in JSON</td>
+                <td>Delete expense item to MongoDB in JSON
+               </td>
               </tr>
               <tr>
                 <th scope="row">GET</th>
-                <td>/items/:id</td>
+                <td>/expense_items</td>
                 <td>No controller</td>
-                <td>Return item with the specified id</td>
+                <td>Return all expense items in JSON</td>
+              </tr>
+              <tr>
+                <th scope="row">PUT</th>
+                <td>/expense_items/:id</td>
+                <td>No controller</td>
+                <td>Update expense item to MongoDB in JSON
+               </td>
+              </tr>
+              <tr>
+                <th scope="row">GET</th>
+                <td>/expense_items/:id</td>
+                <td>No controller</td>
+                <td>Return expense items with the specified id</td>
               </tr>
               <tr>
                 <th scope="row">POST</th>
-                <td>/items</td>
+                <td>/expense_items</td>
                 <td>No controller</td>
-                <td>Post item to MongoDB in JSON
+                <td>Post expense items to MongoDB in JSON
+               </td>
+               <tr>
+                <th scope="row">GET</th>
+                <td>/income_items</td>
+                <td>No controller</td>
+                <td>Return all income items in JSON</td>
+              </tr>
+              <tr>
+                <th scope="row">GET</th>
+                <td>/income_items/:id</td>
+                <td>No controller</td>
+                <td>Return income item with the specified id</td>
+              </tr>
+              <tr>
+                <th scope="row">POST</th>
+                <td>/income_items</td>
+                <td>No controller</td>
+                <td>Post income item to MongoDB in JSON
+               </td>
+              </tr>
+              <tr>
+                <th scope="row">PUT</th>
+                <td>/income_items/:id</td>
+                <td>No controller</td>
+                <td>Update income item to MongoDB in JSON
+               </td>
+              </tr>
+              <tr>
+                <th scope="row">DELETE</th>
+                <td>/income_items/:id</td>
+                <td>No controller</td>
+                <td>Delete expense item to MongoDB in JSON
                </td>
               </tr>
             </tbody>
           </table>
     </div>
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

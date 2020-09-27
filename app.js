@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const users = require('./routes/users');
+const userModel = require('./routes/api/users');
 const expense_items = require('./routes/api/expense_items');
 const income_items = require('./routes/api/income_items');
 const mongoose = require('mongoose');
-const connectDB = require('./db');
 const bodyParser = require('body-parser');
+const config = require ('config')
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -18,20 +18,29 @@ app.use(express.json());
 //Body parser middleware
 app.use(bodyParser.json());
 
-//DB Connect
-connectDB();
+//DB Config
+const db = config.get('mongoURI')
+
+//Connect to MongoDB
+mongoose.connect(db, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true
+}) //Adding new mongo url parser
+  .then(() => console.log('******Mongo DB Connected******'))
+  .catch(err => console.log(err))
 
 app.use(express.urlencoded({ extended: true }));
 
 //Dynamic Routes
-app.use('/users', users);
-app.use ('/api/expense_items', expense_items);
-app.use ('/api/income_items', income_items);
+app.use ('/api/users',  require('./routes/api/users'));
+app.use ('/api/expense_items',  require('./routes/api/expense_items'));
+app.use ('/api/income_items',  require('./routes/api/income_items'));
+app.use ('/api/auth', require('./routes/api/auth'))
 
 //Static routes
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
-
 
 module.exports = app;

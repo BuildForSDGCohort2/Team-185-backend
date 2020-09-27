@@ -1,17 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const IncomeItem = require('../../models/IncomeItemModel');
+const auth = require ('../../middleware/auth');
 
 
-
-router.get('/', (req, res) => {
+//@route    Post api/auth
+//@desc     Get all income items
+//@access   Public
+router.get('/',(req, res) => {
     IncomeItem.find()
         .sort({ date: -1})
         .then (income_item => res.json(income_item));
 });
 
-
-router.post('/', (req, res) => {
+//@route    Post api/auth
+//@desc     Get all income items
+//@access   Private
+router.post('/', auth, (req, res) => {
     const income_item = new IncomeItem({
         description: req.body.description,
         amount: req.body.amount   
@@ -19,7 +24,10 @@ router.post('/', (req, res) => {
     income_item.save().then(income_item => res.json(income_item));
 });
 
-router.delete('/:id', (req, res) => {
+//@route    Post api/auth
+//@desc     Get all income items
+//@access   Private
+router.delete('/:id', auth, (req, res) => {
     IncomeItem.findById(req.params.id)
         .then(item =>item.remove()
         .then(() => res.json({success: true})))
@@ -27,13 +35,15 @@ router.delete('/:id', (req, res) => {
         .json({Success: false}));
 });
 
-router.put('/:id', (req, res, next) => {
+//@route    Post api/auth
+//@desc     Get all income items
+//@access   Private
+router.put('/:id', auth, (req, res, next) => {
     const newIncomeItem = new IncomeItem({
       _id: req.params.id,
       description: req.body.description,
       amount: req.body.amount,
     });
-
     IncomeItem.updateOne({_id: req.params.id}, newIncomeItem)
         .then(() => {res.status(201).json({message: 'Updated!' });})
         .catch((error) => {res.status(400).json({error: error});

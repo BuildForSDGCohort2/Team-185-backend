@@ -1,0 +1,4 @@
+{
+    "mongoURI" : "mongodb+srv://team185:team185password@cluster0.bb8fx.mongodb.net/budger??retryWrites=true&w=majority",
+    "jwtSecret" : "my-jwt-secret"
+}
